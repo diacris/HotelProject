@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="container">
+    <div id="myCarousel" class="carousel slide row" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/Content/img/slide_53c7cd80f3c38.jpg" alt="Fatada" style="width:100%;">
+            </div>
+
+            <div class="item">
+                <img src="~/Content/img/slide_539af4af718cb.jpg" alt="Piscina" style="width:100%;" />
+            </div>
+
+            <div class="item">
+                <img src="~/Content/img/slide_539aef3c3eb2e.jpg" alt="Restaurant" style="width:100%;" />
+            </div>
+
+            <div class="item">
+                <img src="~/Content/img/slide_539aeea80ec64.jpg" alt="Piscina2" style="width:100%;" />
+            </div>
+
+            <div class="item">
+                <img src="~/Content/img/slide_53d8da215f5dd.jpg" alt="Conferinte" style="width:100%;" />
+            </div>
+
+            <div class="item">
+                <img src="~/Content/img/slide_542a65b155b4e.jpg" alt="Camera" style="width:100%;" />
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h1>Hotel Mara</h1>
+    <p class="lead">
+        @Html.ActionLink("Descopera", "Despre", "Home", new { @class = "btn btn-primary btn-lg" })
+    </p>
+    @*<p class="lead">
+        </p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Vrei sa vezi mai multe despre oferta noastra de cazare?</h2>
+        <p></p>
+        <p>
+            @Html.ActionLink("Despre", "Despre", "Home", new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Rezerva acum simplu si rapid!</h2>
+        <br />
+        <p>
+            @Html.ActionLink("Rezervari", "AdaugaRezervare", "Rezervare", new { area = "" }, new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact</h2>
+        <p>Contacteaza-ne pentru pentru mai multe detalii aici!</p>
+        <p>
+            @Html.ActionLink("Contact", "Contact", "Home", new { @class = "btn btn-default" })
+        </p>
+    </div>
+</div>

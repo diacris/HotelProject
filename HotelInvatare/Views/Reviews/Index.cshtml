@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HotelInvatare.Model.ReviewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Modereaza Aprecieri</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Opinie)
+        </th>
+        <th>
+            Stele
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opinie)
+            </td>
+            <td>
+                <div style="color: gold;">
+                    @{
+                        string stelute = "";
+                        for (int i = 0; i < item.Nota; i++)
+                        {
+                            stelute += "★";
+                        }}
+                    @stelute
+                </div>
+                @*@Html.DisplayFor(modelItem => item.Nota)*@
+            </td>
+            <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                    @Html.ActionLink("Sterge", "Sterge", new { id=item.Id }) 
+                    @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+        </tr>
+    }
+
+</table>
